@@ -1,0 +1,29 @@
+.container {
+  width: 1400px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  border: 4px solid transparent;
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 6px 20px;
+  background-color: rgb(158, 255, 162);
+  border: 4px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  font-weight: 700;
+}

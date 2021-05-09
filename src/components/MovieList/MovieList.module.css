@@ -1,0 +1,15 @@
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.link {
+  list-style: none;
+  text-decoration: none;
+  border: 4px solid transparent;
+  color: #000;
+}
+
+.link:hover {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
