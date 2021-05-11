@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 import routes from '../../routes';
 import moviesApi from '../../services/movies-api';
 import defaultPoster from './wat.jpg'
@@ -43,9 +43,13 @@ class MovieDetailsView extends Component {
     history.push(location?.state?.from || routes.movies);
   };
 
+  handleCast = () => {
+  };
+
   render() {
     const { posterUrl, title, releaseYear, score, overview, genres, cast, reviews } = this.state;
     const { match } = this.props;
+    const { location } = this.props;
 
     return (
       <div className={styles.container}>
@@ -72,7 +76,10 @@ class MovieDetailsView extends Component {
           <li className={styles.item}>
             <NavLink
               className={styles.link}
-              to={`${match.url}/cast`}
+              to={{
+                pathname: `${match.url}/cast`,
+                state: { from: location?.state?.from || routes.movies},
+              }}
             >
               Cast
             </NavLink>
@@ -81,7 +88,10 @@ class MovieDetailsView extends Component {
           <li className={styles.item}>
             <NavLink
               className={styles.link}
-              to={`${match.url}/reviews`}
+              to={{
+                pathname: `${match.url}/reviews`,
+                state: { from: location?.state?.from || routes.movies},
+              }}
             >
               Reviews
             </NavLink>
